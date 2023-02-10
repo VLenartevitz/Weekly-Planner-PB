@@ -1,14 +1,15 @@
-import { Container } from "../Componentes/Container";
+import Actions from "../Componentes/Actions";
+import {ContainerDash } from "../Componentes/Container";
 import Header from "../Componentes/Header";
 
 
 const Dashboard = () =>{
     return(
-        <Container>
+        <ContainerDash>
             <Header />
-
+            <Actions />
             
-        </Container>
+        </ContainerDash>
     );
 }
 export default Dashboard;

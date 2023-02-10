@@ -6,7 +6,6 @@ export const Background = styled.div`
     width: 100vw;
     height: 8.125rem;
     left: calc(50% - 1920px/2);
-    top: 0px;
     box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 `
 

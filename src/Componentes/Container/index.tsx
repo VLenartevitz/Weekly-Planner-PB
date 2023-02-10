@@ -9,3 +9,11 @@ export const Container = styled.div`
     box-shadow: 4px 4px 70px rgba(0, 0, 0, 0.25);
 
 `
+export const ContainerDash = styled.div`
+width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+background: rgba(255, 255, 255, 0.95);
+`
