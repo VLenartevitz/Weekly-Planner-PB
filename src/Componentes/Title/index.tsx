@@ -3,9 +3,12 @@ import { PositionTitle, MarginTitle, Welcome } from "./style";
 import { Text } from "./style";
 
 interface Props{
-    margintop: Number;
-    margintitle: Boolean ;
-    titletext: String;
+    margintop: number;
+    margintitle: boolean ;
+    titletext: string;
+    PositionTitle: number;
+    MarginTitle: boolean;
+    Title:any ;
 }
 
 const Title = ( props: Props ) => {

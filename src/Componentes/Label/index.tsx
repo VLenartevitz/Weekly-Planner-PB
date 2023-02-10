@@ -1,4 +1,4 @@
-import { StyleLabel } from "./style.js";
+import { StyleLabel } from "./style";
 
 interface Props {
     labelText: String;

@@ -2,14 +2,14 @@ import React,{useState} from "react"
 import { Container } from "../Componentes/Container";
 import logoUol from '../imgs/logoUol.svg';
 import { ImgUolStyle } from "../Componentes/ImgUol/style";
-import { WrapperEs} from '../Componentes/WrapperEs/style.js';
+import { WrapperEs } from "../Componentes/WrapperEs/style";
 import { LaptopImg } from "../Componentes/LaptopImg/styles";
 import { PositionUol } from "../Componentes/ImgUol/style";
-import Title from "../Componentes/Title/index.js";
-import { LocalInput, PosiForm, PosiInput, StyleInput, StyleInputSenha} from '../Componentes/Input/index.js'
+import Title from "../Componentes/Title";
+import { LocalInput, PosiForm, PosiInput, StyleInput, StyleInputSenha } from "../Componentes/Input/index";
 import Btn from "../Componentes/Btn";
-import BtnVoltarCad from '../Componentes/BtnVoltarCad/index.js'
-import Label from "../Componentes/Label/index.js";
+import BtnVoltarCad from "../Componentes/BtnVoltarCad";
+import Label from "../Componentes/Label";
 import { LocalLabel } from "../Componentes/Label/style";
 import {useNavigate} from "react-router-dom";
 
@@ -40,10 +40,11 @@ const Cadastro = () =>{
     });
     
     const armazenar=(chave:string,valor:string) =>{
-        localStorage.setItem(chave,valor) 
+        localStorage.setItem('chave',valor) 
         navigate('/Login')
         
     }
+    // validações dando erro
     const validarDados=()=>{
         if (itemLocalStorage.firstName = '') return alert('incorrect name')
 
@@ -67,7 +68,11 @@ const Cadastro = () =>{
     return (
     <Container>
         <WrapperEs>
-            <Title margintop={5} titletext='Please,register to continue' margintitle={false} />
+            <Title margintop={5} titletext='Please,register to continue' 
+            margintitle={true} 
+            PositionTitle={0} 
+            MarginTitle={true} 
+            Title={undefined}/>
                 <PosiInput>
                     <PosiForm>
                         <LocalLabel>
@@ -136,7 +141,7 @@ const Cadastro = () =>{
                         <LocalInput>
                             <StyleInput 
                             type='text'
-                            name='cidade'
+                            name='city'
                             placeholder='Your City'
                             value={itemLocalStorage.city}
                             onChange={(e)=>setItemLocalStorage({...itemLocalStorage, city: e.target.value})}

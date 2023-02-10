@@ -1,10 +1,8 @@
-
-import './App.css';
+import RoutesPG from './Componentes/Routes';
 
 function App() {
   return (
-    <>
-    </>
+    <RoutesPG></RoutesPG>
   );
 }
 

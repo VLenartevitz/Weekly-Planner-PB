@@ -4,9 +4,9 @@ import { LaptopImg } from "../Componentes/LaptopImg/styles";
 import { PositionUol } from "../Componentes/ImgUol/style";
 import { ImgUolStyle } from "../Componentes/ImgUol/style";
 import { WrapperEs } from "../Componentes/WrapperEs/style";
-import Title from "../Componentes/Title/index.js";
+import Title from "../Componentes/Title";
 import {MarginTitle} from "../Componentes/Title/style";
-import BtnLogin from '../Componentes/BtnLogin/index.js'
+import BtnLogin from '../Componentes/BtnLogin/index'
 import TextLogin from "../Componentes/TextLogin";
 import BtnVoltarCad from "../Componentes/BtnVoltarCad";
 import IconeUser from "../Componentes/IconeUser";
@@ -23,7 +23,7 @@ const Login = () =>{
         password:'',
     });
 
-    
+    // não esta passando de tela
     const validarDadosLogin =() =>{
         const dados = JSON.parse(localStorage.getItem('chave') || "")
         let fullName = dados.firstName + " " + dados.lastName
@@ -37,11 +37,17 @@ const Login = () =>{
     return(
         <Container>
             <WrapperEs> 
-            <Title margintop={12.313} titletext='To continue browsing safely, log in to the network.' margintitle={true}/>
+            <Title
+                    margintop={12.313}
+                    titletext='To continue browsing safely, log in to the network.' 
+                    margintitle={true}
+                    PositionTitle={0}
+                    MarginTitle={true} 
+                    Title={undefined} />
                 <PosiInput>
                 <TextLogin />
                     <PosiFormLogin>
-                        <IconeUser movimentoxuser={movimentouser}/>
+                        <IconeUser movimentoxuser={movimentouser} />
                         <LocalInput>
                             <StyleInput
                             type='text'
@@ -55,7 +61,7 @@ const Login = () =>{
                         </LocalInput>
                     </PosiFormLogin>
                      <PosiFormLogin>
-                     <IconeSenha movimentoxsenha={movimentosenha}/>
+                     <IconeSenha movimentoxsenha={movimentosenha} />
                         <LocalInput >
                             <StyleInputSenha
                             type='password'
