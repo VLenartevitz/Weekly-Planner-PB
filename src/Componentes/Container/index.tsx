@@ -10,10 +10,9 @@ export const Container = styled.div`
 
 `
 export const ContainerDash = styled.div`
-width: 100vw;
+    width: 100vw;
     height: 100vh;
-    display: flex;
     flex-wrap: wrap;
     overflow-x: hidden;
-background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
 `
