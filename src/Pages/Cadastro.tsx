@@ -44,23 +44,23 @@ const Cadastro = () =>{
         navigate('/Login')
         
     }
-    // validações dando erro
+    // validações dando erro revisar
     const validarDados=()=>{
-        if (itemLocalStorage.firstName = '') return alert('incorrect name')
+        if (itemLocalStorage.firstName == '') return alert('incorrect name')
 
-        if (itemLocalStorage.lastName = '') return alert('incorrect last name')
+        if (itemLocalStorage.lastName == '') return alert('incorrect last name')
 
-        if (itemLocalStorage.birthDate = '')return alert('incorrect date of birth')
+        if (itemLocalStorage.birthDate == '')return alert('incorrect date of birth')
 
-        if (itemLocalStorage.country = '')return alert('wrong country')
+        if (itemLocalStorage.country == '')return alert('wrong country')
 
-        if (itemLocalStorage.city = '')return alert('incorrect city')
+        if (itemLocalStorage.city == '')return alert('incorrect city')
 
-        if (itemLocalStorage.email = '' )return alert('invalid email')
+        if (itemLocalStorage.email == '' )return alert('invalid email')
 
-        if (itemLocalStorage.password = '')return alert('password must be more than 8 characters')
+        if (itemLocalStorage.password == '')return alert('password must be more than 8 characters')
 
-        if (itemLocalStorage.confirmPassword === itemLocalStorage.password)return alert('the passwords are not the same')
+        if (itemLocalStorage.confirmPassword !== itemLocalStorage.password)return alert('the passwords are not the same')
 
 
         armazenar('ls_valores',JSON.stringify(itemLocalStorage))

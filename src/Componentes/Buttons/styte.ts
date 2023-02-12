@@ -15,7 +15,7 @@ export const AddStyle = styled.button`
     
     background: #00BA88;
     border-radius: 10px;
-    border-color: #00BA88;
+    border-style:none;
 `
 export const DeleteStyle = styled.button`
 
@@ -28,7 +28,7 @@ export const DeleteStyle = styled.button`
 
     background: #FF3D1F;
     border-radius: 10px;
-    border-color: #FF3D1F;
+    border-style:none;
 `
 export const TextAdd = styled.text`
 

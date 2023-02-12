@@ -8,7 +8,7 @@ const Clima = () => {
         const cidade = JSON.parse(localStorage.getItem('chave') || "")
         const wheaterApi = {
             url:"https://api.openweathermap.org/data/2.5",
-            // city:localStorage;
+            city:localStorage,
             key:"6acd5cd4f69292a07b3184c643234ee5"
         };
         const [weather, setWeather] = useState("");
@@ -22,12 +22,11 @@ const Clima = () => {
             );
         }, 1000);
 
-        return () =>clearInterval(interval);
+        return() =>clearInterval(interval);
     },[]);
 
-    return (
-        <>
-         {/* <ClimaPosi>{WheaterApi}</ClimaPosi> */}
+    return (<>
+        <ClimaPosi>adwasdawda</ClimaPosi>
         </>
     )
 }}

@@ -23,7 +23,7 @@ const Login = () =>{
         password:'',
     });
 
-    // não esta passando de tela
+// sistema de erro amarelo faltando
     const validarDadosLogin =() =>{
         const dados = JSON.parse(localStorage.getItem('chave') || "")
         let fullName = dados.firstName + " " + dados.lastName
