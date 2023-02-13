@@ -13,7 +13,7 @@ const Header = () =>{
             </DivWeekly>
 
             <Data />
-            {/* <Clima></Clima> */}
+            <Clima />
             <ImgUolDashboard />
             <Logout />
             

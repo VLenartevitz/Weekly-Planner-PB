@@ -4,32 +4,42 @@ import { ClimaPosi } from "./style";
 
 
 const Clima = () => {
-    function WheaterApi(){
+
+    const [weather, setWeather] = useState<any>();
+
+    useEffect(()=>{
         const cidade = JSON.parse(localStorage.getItem('chave') || "")
-        const wheaterApi = {
-            url:"https://api.openweathermap.org/data/2.5",
-            city:localStorage,
+        const WheaterApi = {
+            city: cidade.city,
             key:"6acd5cd4f69292a07b3184c643234ee5"
         };
-        const [weather, setWeather] = useState("");
+        function getWheater(){
+            try{
+                fetch(
+                    `https://api.openweathermap.org/data/2.5/weather?q=${WheaterApi.city}&appid=${WheaterApi.key}&units=metric`
+                ).then((Response)=>
+                Response.json().then((data)=> setWeather(data))
+                );
+            }catch(erro){console.log(erro)};
+            
+        }
+        getWheater()
+        
+    }, []);
 
-        useEffect(()=>{
-            const interval = setInterval(()=>{
-            fetch(
-                `weather?lat={lat}&lon={lon}&appid=${cidade}&units=metric&appid=${wheaterApi.key}`
-            ).then((Response)=>
-            Response.json().then((data)=> setWeather(data.main.temp.toFixed(0)))
-            );
-        }, 1000);
-
-        return() =>clearInterval(interval);
-    },[]);
-
-    return (<>
-        <ClimaPosi>adwasdawda</ClimaPosi>
-        </>
+    // useEffect(()=>{
+    //     console.log(weather)
+    // })
+  
+    return (
+        
+        <ClimaPosi >
+            {Number(weather?.main?.temp).toFixed(0)}
+            {weather?.name}
+        </ClimaPosi>
+        
     )
-}}
+}
 
 export default Clima;
 

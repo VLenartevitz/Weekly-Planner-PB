@@ -4,8 +4,11 @@ const InputsActions = () =>{
     return(
         <PosiInputs>
             <InputText type='text' placeholder="Task or issue" />
-            <InputSelect  type='text' placeholder="Monday" /> 
-            <InputHours type='text' placeholder="data"/>
+            <InputSelect  placeholder="Monday" >
+            <option>adwads</option>    
+            </InputSelect> 
+
+            <InputHours type='time' placeholder="data"/>
         </PosiInputs>
     )
 } 

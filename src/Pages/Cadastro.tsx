@@ -44,7 +44,7 @@ const Cadastro = () =>{
         navigate('/Login')
         
     }
-    // validações dando erro revisar
+    // revisar
     const validarDados=()=>{
         if (itemLocalStorage.firstName == '') return alert('incorrect name')
 

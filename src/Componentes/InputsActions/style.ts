@@ -22,7 +22,7 @@ export const InputText = styled.input`
     color: rgba(0, 0, 0, 0.7);
     }
 `
-export const InputSelect = styled.input`
+export const InputSelect = styled.select`
     box-sizing: border-box;
 
     position: relative;

@@ -6,5 +6,6 @@ flex-direction: column;
 align-items: center;
 margin-top: 31px;
 margin-left: 200px;
+width: 100px;
 `
 
