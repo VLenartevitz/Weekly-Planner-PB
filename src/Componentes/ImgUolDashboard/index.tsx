@@ -3,9 +3,7 @@ import { ImgUolPosiDash, ImgUolStyleDash } from './style';
 
 const ImgUolDashboard=() => {
     return (
-        <ImgUolPosiDash>
-            <ImgUolStyleDash  src={logoUolDashboard} alt='logo'/>
-        </ImgUolPosiDash>
+        <> </>
     );
 };
 

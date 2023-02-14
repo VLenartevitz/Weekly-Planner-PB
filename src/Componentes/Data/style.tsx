@@ -31,6 +31,7 @@ flex-grow: 0;
 export const StyleDataAtual = styled.div`
 width: 201px;
 height: 20px;
+margin-top: 15px;
 
 font-family: 'Mulish';
 font-style: normal;

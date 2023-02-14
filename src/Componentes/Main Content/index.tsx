@@ -8,7 +8,6 @@ const MainContent = () =>{
         <MainContentStyle>
             <Actions />
             <LogoUol />
-            
         </MainContentStyle>
     )
 }

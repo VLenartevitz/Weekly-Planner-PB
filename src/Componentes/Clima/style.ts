@@ -6,7 +6,7 @@ flex-direction: column;
 align-items: center;
 width: 150px;
 height: 100px;
-margin-top: 15px;
+margin-top: 20px;
 `
 export const StyleTemp = styled.div`
 display: flex;

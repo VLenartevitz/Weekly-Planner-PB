@@ -1,7 +1,7 @@
 import { Response } from "node-fetch";
 import { useEffect, useState } from "react";
 import { ClimaPosi, PosiNuvemTemp, StyleName, StyleNuvem, StyleTemp } from "./style";
-import nuvem from '../../imgs/nuvem.png'
+import nuvem from '../../imgs/nuvem.png';
 
 const Clima = () => {
 
@@ -11,6 +11,7 @@ const Clima = () => {
         const cidade = JSON.parse(localStorage.getItem('chave') || "")
         const WheaterApi = {
             city: cidade.city,
+            estado: cidade.country,
             key:"6acd5cd4f69292a07b3184c643234ee5"
         };
         function getWheater(){
@@ -28,7 +29,7 @@ const Clima = () => {
     }, []);
 
     useEffect(()=>{
-        console.log(weather)
+        console.log(JSON.parse(localStorage.getItem('chave') || ""))
     })
   
     return (
@@ -36,7 +37,7 @@ const Clima = () => {
         <ClimaPosi >
             <StyleName>
                 {weather?.name}
-                {/* {weather?.country} */}
+                {JSON.parse(localStorage.getItem('chave') || "").country}
             </StyleName>
             <PosiNuvemTemp>
                 <StyleNuvem>

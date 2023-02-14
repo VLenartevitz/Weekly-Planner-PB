@@ -12,7 +12,7 @@ export const Background = styled.div`
 export const DivWeekly = styled.div`
     position: relative;
     width: 36rem;
-    height: 4rem;
+    height: 64px;
     left: 0px;
     top: 2em;
     background: #000000;
@@ -46,4 +46,10 @@ export const SubTitle = styled.text`
     color: #FFFFFF;
     margin-left: 1.5rem;
     align-items: center;
+`
+
+export const SpaceDataClima =styled.div`
+display: flex;
+width: 900px;
+justify-content: space-around;
 `

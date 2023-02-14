@@ -5,7 +5,13 @@ const InputsActions = () =>{
         <PosiInputs>
             <InputText type='text' placeholder="Task or issue" />
             <InputSelect  placeholder="Monday" >
-            <option>adwads</option>    
+            <option>Sunday</option> 
+            <option>Monday</option> 
+            <option>Tuesday</option>  
+            <option>Wednesday</option> 
+            <option>Thursday</option> 
+            <option>Friday</option> 
+            <option>Saturday</option> 
             </InputSelect> 
 
             <InputHours type='time' placeholder="data"/>

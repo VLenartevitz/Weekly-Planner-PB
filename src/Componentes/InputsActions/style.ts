@@ -9,6 +9,7 @@ export const InputText = styled.input`
     position: relative;
     width: 391px;
     height: 45px;
+    margin-right: 3px;
 
     border: 1px solid #FECE00;
     border-radius: 10px;
@@ -28,7 +29,9 @@ export const InputSelect = styled.select`
 
     position: relative;
     width: 240px;
-    height: 45px;
+    height: 50px;
+    margin-right: 3px;
+
     
 
     background: #FFFFFF;
@@ -50,8 +53,8 @@ export const InputHours = styled.input`
 
     position: relative;
     
-    height: 45px;
-
+    height: 50px;
+    width: 120px;
 
     background: #FFFFFF;
     border: 1px solid #FECE00;
