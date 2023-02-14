@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const PosiBtn = styled.div`
     display: flex;
     justify-content: flex-end;
+    margin-right: 20px;
     
 `
 export const AddStyle = styled.button`
@@ -24,7 +25,7 @@ export const DeleteStyle = styled.button`
     height: 44px;
     padding: 10px 12px;
     gap: 4px;
-    
+    margin-left: 10px;
 
     background: #FF3D1F;
     border-radius: 10px;

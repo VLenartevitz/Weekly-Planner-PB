@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const PosiInputs = styled.div`
     display: flex;
+    margin-left: 20px;
 `
 export const InputText = styled.input`
    

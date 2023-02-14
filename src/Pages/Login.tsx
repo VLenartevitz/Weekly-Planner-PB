@@ -26,12 +26,12 @@ const Login = () =>{
 // sistema de erro amarelo faltando
     const validarDadosLogin =() =>{
         const dados = JSON.parse(localStorage.getItem('chave') || "")
-        let fullName = dados.firstName + " " + dados.lastName
+        let fullName = dados.firstName + " " + dados.lastName 
         if ((itemLocalStorage.firstName === fullName || itemLocalStorage.firstName === dados.email) && (itemLocalStorage.password === dados.password))
         {navigate('/Dashboard')}else{alert('erro')}}
-        
-
-    const [movimentouser,setMovimentouser]=useState(false)
+                  
+ 
+    const [movimentouser,setMovimentouser]=useState(false)          
     const [movimentosenha,setMovimentosenha]=useState(false)
 
     return(

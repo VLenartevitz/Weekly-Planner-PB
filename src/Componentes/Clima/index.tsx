@@ -1,7 +1,7 @@
 import { Response } from "node-fetch";
 import { useEffect, useState } from "react";
-import { ClimaPosi } from "./style";
-
+import { ClimaPosi, PosiNuvemTemp, StyleName, StyleNuvem, StyleTemp } from "./style";
+import nuvem from '../../imgs/nuvem.png'
 
 const Clima = () => {
 
@@ -27,15 +27,25 @@ const Clima = () => {
         
     }, []);
 
-    // useEffect(()=>{
-    //     console.log(weather)
-    // })
+    useEffect(()=>{
+        console.log(weather)
+    })
   
     return (
         
         <ClimaPosi >
-            {Number(weather?.main?.temp).toFixed(0)}
-            {weather?.name}
+            <StyleName>
+                {weather?.name}
+                {/* {weather?.country} */}
+            </StyleName>
+            <PosiNuvemTemp>
+                <StyleNuvem>
+                    <img src={nuvem}></img>
+                </StyleNuvem>
+                <StyleTemp>
+                    {Number(weather?.main?.temp).toFixed(0)}°
+                </StyleTemp>
+            </PosiNuvemTemp>
         </ClimaPosi>
         
     )
