@@ -13,6 +13,7 @@ import Label from "../Componentes/Label";
 import { LocalLabel } from "../Componentes/Label/style";
 import {useNavigate} from "react-router-dom";
 
+
 interface itemLocalStorageType {
     firstName: string;
     lastName: string;
@@ -41,11 +42,13 @@ const Cadastro = () =>{
     
     const armazenar=(chave:string,valor:string) =>{
         localStorage.setItem('chave',valor) 
-        navigate('/Login')
+        
         
     }
     // revisar
-    const validarDados=()=>{
+    const validarDados=(e:any)=>{
+        e.preventDefault()
+
         if (itemLocalStorage.firstName == '') return alert('incorrect name')
 
         if (itemLocalStorage.lastName == '') return alert('incorrect last name')
@@ -63,8 +66,44 @@ const Cadastro = () =>{
         if (itemLocalStorage.confirmPassword !== itemLocalStorage.password)return alert('the passwords are not the same')
 
 
+        getUser()
+
         armazenar('ls_valores',JSON.stringify(itemLocalStorage))
     }
+
+    async function getUser(){
+        try{
+            fetch('https://latam-challenge-2.deta.dev/api/v1/users/sign-up',
+            {method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            }
+                ,body:JSON.stringify({
+                firstName: itemLocalStorage.firstName,
+                lastName: itemLocalStorage.lastName,
+                birthDate: itemLocalStorage.birthDate,
+                city: itemLocalStorage.city,
+                country: itemLocalStorage.country,
+                email: itemLocalStorage.email,
+                password: itemLocalStorage.password,
+                confirmPassword: itemLocalStorage.confirmPassword
+            })})
+            .then((Response)=>
+            {if (Response.status == 400 ) return alert ('triste request')
+            if  (Response.status == 500) return alert ('erro de servidor')
+
+            Response.json().then((data)=> {
+                alert ('O cria foi criado')
+                console.log(Response.statusText);
+                navigate('/Login')})
+            }
+            
+            );
+            }catch(erro:any){console.log(erro.message)};
+            
+            
+        }
+
     return (
     <Container>
         <WrapperEs>
@@ -191,7 +230,7 @@ const Cadastro = () =>{
                             />  
                         </LocalInput>
                     </PosiForm>
-                    <Btn textButton='Register Now'  onClick={()=>{validarDados()}} />
+                    <Btn textButton='Register Now'  onClick={(e:any)=>validarDados(e)} />
                     <BtnVoltarCad path='/Login' textButton='Already have registration? log in'/>
                 </PosiInput>
         </WrapperEs>

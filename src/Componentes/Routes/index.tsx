@@ -7,7 +7,7 @@ const RoutesPG = () => {
     return (
         <BrowserRouter>
       <Routes>
-      <Route path='/'  element={<Cadastro/>}/>
+      <Route path="/"  element={<Cadastro/>}/>
       </Routes>
       <Routes>
         <Route path='/Login'  element={<Login/>}/>

@@ -28,9 +28,9 @@ const Clima = () => {
         
     }, []);
 
-    useEffect(()=>{
-        console.log(JSON.parse(localStorage.getItem('chave') || ""))
-    })
+    // useEffect(()=>{
+    //     console.log(JSON.parse(localStorage.getItem('chave') || ""))
+    // })
   
     return (
         
