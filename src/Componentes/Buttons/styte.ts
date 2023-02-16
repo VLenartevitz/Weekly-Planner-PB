@@ -9,6 +9,9 @@ export const PosiBtn = styled.div`
 export const AddStyle = styled.button`
     
     position: relative;
+    display: flex;
+    justify-content: space-around;
+
     width: 200px;
     height: 44px;
     padding: 10px 12px;
@@ -21,6 +24,8 @@ export const AddStyle = styled.button`
 export const DeleteStyle = styled.button`
 
     position: relative;
+    display: flex;
+    justify-content: space-around;
     width: 200px;
     height: 44px;
     padding: 10px 12px;
@@ -34,6 +39,7 @@ export const DeleteStyle = styled.button`
 export const TextAdd = styled.p`
 
 font-size: 18px;
+margin: 0;
 
 display: flex;
 align-items: center;
@@ -44,6 +50,7 @@ color: #FFFFFF;
 export const TextDelete = styled.p`
 
 font-size: 18px;
+margin: 0;
 
 display: flex;
 align-items: center;

@@ -4,7 +4,7 @@ const Buttons = () =>{
     return(
         <PosiBtn>
             <AddStyle><TextAdd>+  Add to Calendar</TextAdd></AddStyle>
-            <DeleteStyle><TextDelete>Delete All</TextDelete></DeleteStyle>
+            <DeleteStyle><TextDelete>- Delete All</TextDelete></DeleteStyle>
         </PosiBtn>
     )
 } 
