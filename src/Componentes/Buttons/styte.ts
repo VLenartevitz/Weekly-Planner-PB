@@ -31,7 +31,7 @@ export const DeleteStyle = styled.button`
     border-radius: 10px;
     border-style:none;
 `
-export const TextAdd = styled.text`
+export const TextAdd = styled.p`
 
 font-size: 18px;
 
@@ -41,7 +41,7 @@ align-items: center;
 color: #FFFFFF;
 `
 
-export const TextDelete = styled.text`
+export const TextDelete = styled.p`
 
 font-size: 18px;
 

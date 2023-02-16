@@ -20,7 +20,7 @@ export const StyleInputSenha = styled.input`
         padding-left:3rem;
     }
 `
-export const StyleInput = styled.input<{text?:string}>`
+export const StyleInput = styled.input`
     height: 3.75rem;
     display: flex;
     width: 23.688rem;

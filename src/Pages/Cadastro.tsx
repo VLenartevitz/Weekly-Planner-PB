@@ -66,12 +66,12 @@ const Cadastro = () =>{
         if (itemLocalStorage.confirmPassword !== itemLocalStorage.password)return alert('the passwords are not the same')
 
 
-        getUser()
+        saveUser()
 
         armazenar('ls_valores',JSON.stringify(itemLocalStorage))
     }
 
-    async function getUser(){
+    async function saveUser(){
         try{
             fetch('https://latam-challenge-2.deta.dev/api/v1/users/sign-up',
             {method: 'POST',
@@ -89,18 +89,17 @@ const Cadastro = () =>{
                 confirmPassword: itemLocalStorage.confirmPassword
             })})
             .then((Response)=>
-            {if (Response.status == 400 ) return alert ('triste request')
-            if  (Response.status == 500) return alert ('erro de servidor')
+            {if (Response.status == 400 ) return alert ('400 - Algum input esta invalido')
+            if  (Response.status == 500) return alert ('500 - Erro com o servidor')
 
             Response.json().then((data)=> {
-                alert ('O cria foi criado')
+                alert ('Parabens! sua conta foi criada')
                 console.log(Response.statusText);
                 navigate('/Login')})
             }
             
             );
             }catch(erro:any){console.log(erro.message)};
-            
             
         }
 
@@ -194,7 +193,7 @@ const Cadastro = () =>{
                         <LocalInput>
                             <StyleInput 
                             type='email'
-                            text='e-mail'
+                           
                             name='email'
                             placeholder='A valid e-mail here'
                             value={itemLocalStorage.email}

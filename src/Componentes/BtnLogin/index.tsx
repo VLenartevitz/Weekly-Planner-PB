@@ -2,7 +2,7 @@ import { StyleBtn } from "./style";
 
 interface Props{
     textButton: String;
-    onClick: ()=>void;
+    onClick: (e:any)=>void;
     
 }
 

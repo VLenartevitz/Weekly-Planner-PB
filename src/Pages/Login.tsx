@@ -21,18 +21,47 @@ const Login = () =>{
     const [itemLocalStorage,setItemLocalStorage]=useState({
         firstName:'',
         password:'',
+        
     });
 
 // sistema de erro amarelo faltando
-    const validarDadosLogin =() =>{
+    const validarDadosLogin =(e:any) =>{
+        e.preventDefault()
         const dados = JSON.parse(localStorage.getItem('chave') || "")
         let fullName = dados.firstName + " " + dados.lastName 
         if ((itemLocalStorage.firstName === fullName || itemLocalStorage.firstName === dados.email) && (itemLocalStorage.password === dados.password))
-        {navigate('/Dashboard')}else{alert('erro')}}
+        {}else{alert('erro')} getUser()}
                   
  
     const [movimentouser,setMovimentouser]=useState(false)          
     const [movimentosenha,setMovimentosenha]=useState(false)
+
+    async function getUser(){
+
+
+        try{
+            fetch('https://latam-challenge-2.deta.dev/api/v1/users/sign-in',
+            {method:'POST',
+            headers:{'Content-Type': 'application/json'},
+            body:JSON.stringify({
+                email: itemLocalStorage.firstName,
+                password: itemLocalStorage.password
+            })})
+            .then((Response)=>
+            {
+                if (Response.status == 400) return alert ('400 - Alguma credencial esta errada tente novamente')
+                if (Response.status == 500) return alert ('500 - Erro com o servidor')
+
+                Response.json().then((data)=> {
+                alert ('Parabens! Login realizado com sucessor!')
+                console.log(Response.statusText);
+                navigate('/Dashboard')})
+
+
+            }
+            )
+        }catch(erro:any){console.log(erro)};
+    };
 
     return(
         <Container>
@@ -57,6 +86,7 @@ const Login = () =>{
                             onChange={(e)=>{setItemLocalStorage({...itemLocalStorage, firstName: e.target.value});setMovimentouser(true)}}
                             onFocus={()=>setMovimentouser(true)}
                             onBlur={()=> {if (itemLocalStorage.firstName.length === 0) {setMovimentouser(false)}}}
+                            
                             />  
                         </LocalInput>
                     </PosiFormLogin>
@@ -74,7 +104,7 @@ const Login = () =>{
                             />  
                         </LocalInput>
                     </PosiFormLogin> 
-                    <BtnLogin textButton='Log in' onClick={validarDadosLogin}/>
+                    <BtnLogin textButton='Log in' onClick={(e:any)=>validarDadosLogin(e)}/>
                     <BtnVoltarCad path='/' textButton='Back to registration screen'/>
                     
                 </PosiInput>

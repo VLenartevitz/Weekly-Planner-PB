@@ -16,7 +16,7 @@ height: 21px;
 width: 21px;
 `
 
-export const TextoLogout = styled.text`
+export const TextoLogout = styled.p`
 height: 20px;
 width: 55px;
 display: flex;
