@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const ContainerDash = styled.div`
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     flex-wrap: wrap;
-    overflow-x: hidden;
     background: rgba(255, 255, 255, 0.95);
 `

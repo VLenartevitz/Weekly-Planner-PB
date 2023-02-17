@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Background = styled.div`
     display: flex;
+    position: fixed;
     background-color:  #FFFFFF;
-    width: 100vw;
+    width: 100%;
     height: 8.125rem;
-    left: calc(50% - 1920px/2);
     box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 `
 

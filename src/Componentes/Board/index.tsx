@@ -1,9 +1,19 @@
-import { AreaBoard, Days } from "./style";
+import { AreaBoard, BoxTime, Tasks, Time } from "./style";
+import { Logo, PosiLogo } from "./style";
+
+
+
 
 const Board = () =>{
     return (
         <AreaBoard>
-            <Days />
+            <Tasks> 
+                <Time><BoxTime>Time</BoxTime></Time>
+            </Tasks>
+            
+            <PosiLogo>
+                <Logo></Logo>
+            </PosiLogo>
         </AreaBoard>
     )
 } 
