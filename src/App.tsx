@@ -1,8 +1,11 @@
 import RoutesPG from './Componentes/Routes';
+import { AuthProvider } from './Context/Auth/AuthProvider';
 
 function App() {
   return (
-    <RoutesPG></RoutesPG>
+    <AuthProvider>
+      <RoutesPG></RoutesPG>
+    </AuthProvider>
   );
 }
 

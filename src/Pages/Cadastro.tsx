@@ -12,7 +12,7 @@ import BtnVoltarCad from "../Componentes/BtnVoltarCad";
 import Label from "../Componentes/Label";
 import { LocalLabel } from "../Componentes/Label/style";
 import {useNavigate} from "react-router-dom";
-
+const Env =process.env.REACT_APP_API 
 
 interface itemLocalStorageType {
     firstName: string;
@@ -73,7 +73,7 @@ const Cadastro = () =>{
 
     async function saveUser(){
         try{
-            fetch('https://latam-challenge-2.deta.dev/api/v1/users/sign-up',
+            fetch( Env + 'users/sign-up',
             {method: 'POST',
             headers:{
                 'Content-Type': 'application/json'

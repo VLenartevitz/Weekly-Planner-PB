@@ -2,6 +2,7 @@ import { BrowserRouter , Route, Routes} from 'react-router-dom'
 import Cadastro from '../../Pages/Cadastro';
 import Login from '../../Pages/Login';
 import Dashboard from '../../Pages/Dashboard';
+import { RequireAuth } from '../../Context/Auth/RequireAuth';
 
 const RoutesPG = () => {
     return (
@@ -11,7 +12,7 @@ const RoutesPG = () => {
       
         <Route path='/Login'  element={<Login/>}/>
       
-        <Route path='/Dashboard'  element={<Dashboard/>}/>
+        <Route path='/Dashboard'  element={<Dashboard />}/>
       </Routes>
     </BrowserRouter>
     );

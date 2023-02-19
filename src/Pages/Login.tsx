@@ -14,9 +14,13 @@ import { LocalInput, PosiFormLogin, PosiInput, StyleInput, StyleInputSenha } fro
 import { useState } from "react";
 import IconeSenha from "../Componentes/IconeSenha";
 import { useNavigate } from "react-router-dom";
+import {useContext} from 'react';
+import { AuthContext } from "../Context/Auth/AuthContext";
+const Env =process.env.REACT_APP_API 
 
 const Login = () =>{
     const navigate = useNavigate()
+    const auth = useContext(AuthContext)
 
     const [itemLocalStorage,setItemLocalStorage]=useState({
         firstName:'',
@@ -24,23 +28,27 @@ const Login = () =>{
         
     });
 
-// sistema de erro amarelo faltando
-    const validarDadosLogin =(e:any) =>{
+    const validarDadosLogin = async(e:any) =>{
         e.preventDefault()
         const dados = JSON.parse(localStorage.getItem('chave') || "")
         let fullName = dados.firstName + " " + dados.lastName 
         if ((itemLocalStorage.firstName === fullName || itemLocalStorage.firstName === dados.email) && (itemLocalStorage.password === dados.password))
-        {}else{alert('erro')} getUser()}
+        {
+            const isLogged = await auth.signin(itemLocalStorage.firstName,itemLocalStorage.password);
+            if(isLogged){
+                getUser()
+            }
+        }else{alert('erro')}}
                   
  
     const [movimentouser,setMovimentouser]=useState(false)          
     const [movimentosenha,setMovimentosenha]=useState(false)
 
+
     async function getUser(){
-
-
+        
         try{
-            fetch('https://latam-challenge-2.deta.dev/api/v1/users/sign-in',
+            fetch( Env +'users/sign-in',
             {method:'POST',
             headers:{'Content-Type': 'application/json'},
             body:JSON.stringify({
