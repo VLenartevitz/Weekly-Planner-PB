@@ -12,7 +12,7 @@ const RoutesPG = () => {
       
         <Route path='/Login'  element={<Login/>}/>
       
-        <Route path='/Dashboard'  element={<Dashboard />}/>
+        <Route path='/Dashboard'  element={<RequireAuth children={<Dashboard />}/>}/>
       </Routes>
     </BrowserRouter>
     );

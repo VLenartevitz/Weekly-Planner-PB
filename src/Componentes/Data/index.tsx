@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { DataPosi, StyleDataAtual, StyleHora } from "./style";
 
 const Data = () =>{
@@ -16,19 +17,28 @@ const Data = () =>{
         "Ovember",
         "December"
       ];
+      const [horas, setHoras]=useState<string>()
 
+    useEffect(()=>{
+        setInterval(()=>{
+
+            const data = new Date()
+            const hora = data.getHours()
+            const minutos = data.getMinutes()
+
+            setHoras(`${hora}:${minutos}`)
+            
+        },1000)
+    },[])
     const data = new Date()
-    const hora = data.getHours()
-    const minutos = data.getMinutes()
     const dia = data.getDate() + 'th'
     const mes = meses[data.getMonth() + 1];
     const ano = data.getFullYear()
-    const horaMinutos = `${hora}:${minutos}`
     const dataAtual = `${mes} ${dia},${ano}`
 
     return (
         <DataPosi>
-            <StyleHora>{horaMinutos}</StyleHora>
+            <StyleHora>{horas}</StyleHora>
             <StyleDataAtual>{dataAtual}</StyleDataAtual>
         </DataPosi>    
     )

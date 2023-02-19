@@ -22,8 +22,8 @@ const MainContent = () =>{
             <Days>
                 <StyleDays>
                     <Lista> 
-                        {daysArray.map((item,) => (
-                            <ItemList style={{backgroundColor: item.color}}>
+                        {daysArray.map((item,id) => (
+                            <ItemList style={{backgroundColor: item.color}} key={id}>
                                 {item.day} 
                             </ItemList>
 

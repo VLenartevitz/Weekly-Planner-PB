@@ -16,7 +16,7 @@ height: 21px;
 width: 21px;
 `
 
-export const TextoLogout = styled.p`
+export const TextoLogout = styled.button`
 height: 20px;
 width: 55px;
 display: flex;
@@ -29,6 +29,8 @@ font-size: 17px;
 line-height: 20px;
 
 color: #000000;
+background-color: #ffffff;
+border-style: none;
 `
 export const ImgUolStyleDash = styled.img`
    position: relative;

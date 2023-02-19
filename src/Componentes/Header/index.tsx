@@ -1,6 +1,6 @@
 import Clima from "../Clima/index";
 import Data from "../Data";
-import ImgUolDashboard from "../ImgUolDashboard";
+
 import Logout from "../Logout";
 import { Background, DivWeekly, SpaceDataClima, SubTitle, TitleWeekly } from "./style";
 
